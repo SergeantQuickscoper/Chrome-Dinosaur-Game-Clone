@@ -15,7 +15,13 @@ public class PlayerMovement : MonoBehaviour
 
     bool isDead = false;
 
+    private GameMaster gameMasterInstance;
+
     // Start is called before the first frame update
+    void Awake()
+    {
+        gameMasterInstance = GameObject.FindObjectOfType<GameMaster>();
+    }
     void Start()
     {
         
@@ -54,6 +60,14 @@ public class PlayerMovement : MonoBehaviour
             isStarted = true;
 
         }
+        }
+
+        if(isDead == true)
+        {
+            if(Input.GetKeyDown(KeyCode.Space))
+            {
+                gameMasterInstance.RespawnPlayer(isDead, this);
+            }
         }
         
     }

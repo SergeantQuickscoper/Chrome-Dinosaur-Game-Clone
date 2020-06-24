@@ -215,7 +215,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   charController2D: {fileID: 3646282483626288069}
-  anim: {fileID: 0}
+  anim: {fileID: 6056176296007357069}
   HorizontalValue: 0
   runSpeed: 30
 --- !u!1 &3646282484123304093
@@ -288,6 +288,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7457440527259547008}
   - component: {fileID: 2530563766691099475}
+  - component: {fileID: 6056176296007357069}
   m_Layer: 0
   m_Name: Graphics
   m_TagString: Untagged
@@ -360,3 +361,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &6056176296007357069
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6152420197354807153}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4f11ad4ba45f1e447999e375650dd05b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
