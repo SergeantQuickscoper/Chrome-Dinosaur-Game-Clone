@@ -13,6 +13,8 @@ public class PlayerMovement : MonoBehaviour
     bool isJump = false;
     bool isCrouch = false;
 
+    bool isDead = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,8 +24,10 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        anim.SetFloat("Speed", HorizontalValue);
         
+        
+        if(isDead ==false)
+        {
 
         if (isStarted == true)
         {
@@ -50,7 +54,7 @@ public class PlayerMovement : MonoBehaviour
             isStarted = true;
 
         }
-
+        }
         
     }
 
@@ -58,9 +62,13 @@ public class PlayerMovement : MonoBehaviour
     {
         if (isStarted == true)
         {
+            if(isDead == false)
+            {
             HorizontalValue = 1f;
             charController2D.Move(HorizontalValue * runSpeed * Time.fixedDeltaTime, isCrouch, isJump);
             isJump = false;
+            anim.SetFloat("Speed", HorizontalValue);
+            }
         }
     }
 
@@ -72,5 +80,14 @@ public class PlayerMovement : MonoBehaviour
     public void OnCrouch(bool isCrouching)
     {
         anim.SetBool("IsCrouch", isCrouching);
+    }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.collider.CompareTag("Obstacle"))
+        {
+            isDead = true;
+            anim.SetBool("IsDead", isDead);
+        }
     }
 }
