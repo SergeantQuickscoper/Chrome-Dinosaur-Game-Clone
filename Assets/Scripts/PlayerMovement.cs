@@ -12,15 +12,19 @@ public class PlayerMovement : MonoBehaviour
     private bool isStarted = false;
     bool isJump = false;
     bool isCrouch = false;
+    
 
     bool isDead = false;
 
     private GameMaster gameMasterInstance;
+    private PlayerMovement Player;
 
     // Start is called before the first frame update
     void Awake()
     {
         gameMasterInstance = GameObject.FindObjectOfType<GameMaster>();
+        Player = GameObject.FindObjectOfType<PlayerMovement>();
+
     }
     void Start()
     {
@@ -66,7 +70,7 @@ public class PlayerMovement : MonoBehaviour
         {
             if(Input.GetKeyDown(KeyCode.Space))
             {
-                gameMasterInstance.RespawnPlayer(isDead, this);
+                gameMasterInstance.RespawnPlayer(isDead, Player);
             }
         }
         
