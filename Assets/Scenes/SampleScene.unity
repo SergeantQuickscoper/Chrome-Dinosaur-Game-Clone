@@ -404,6 +404,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6547391e851c6c6439d649d137d68ca9, type: 3}
+--- !u!4 &953191267 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3646282483626288094, guid: a05b8945c6f370a44bb71a8b0471da3f,
+    type: 3}
+  m_PrefabInstance: {fileID: 3646282483541531818}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1055536420
 GameObject:
   m_ObjectHideFlags: 0
@@ -463,9 +469,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1af33e26807bfac4daadcad2772bbed4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelPart: {fileID: 5246325539241365582, guid: bd333f1dbe6fa694e907cc6cf9de84f7,
-    type: 3}
+  levelParts:
+  - {fileID: 5246325539241365582, guid: bd333f1dbe6fa694e907cc6cf9de84f7, type: 3}
+  - {fileID: 2305545161251638316, guid: f1a71156504af31488c9128d05cd9e0c, type: 3}
+  - {fileID: 5568653715047528219, guid: cb1721095431b924288f02833864fc2f, type: 3}
+  - {fileID: 836908823669168576, guid: d4167ee30d9ef4f4b9ae03fadc0501e0, type: 3}
+  - {fileID: 7637620244550547461, guid: 5c31c2ba7cdeed44b859497efde8f586, type: 3}
   startingLevelPart: {fileID: 1511003984}
+  PlayerReference: {fileID: 953191267}
 --- !u!4 &1080703225 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8628089637662239717, guid: a05b8945c6f370a44bb71a8b0471da3f,
