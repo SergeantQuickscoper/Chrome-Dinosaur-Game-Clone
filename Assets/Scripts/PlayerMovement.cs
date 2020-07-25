@@ -12,12 +12,13 @@ public class PlayerMovement : MonoBehaviour
     private bool isStarted = false;
     bool isJump = false;
     bool isCrouch = false;
-    
-
     bool isDead = false;
-
     private GameMaster gameMasterInstance;
     private PlayerMovement Player;
+    public float SpeedMutliplier = 1.25f;
+    public float SpeedMilestone = 100;
+    private float SpeedMilestoneCount = 0;
+
 
     // Start is called before the first frame update
     void Awake()
@@ -35,6 +36,12 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         
+        if(transform.position.x > SpeedMilestoneCount)
+        {
+            SpeedMilestoneCount += SpeedMilestone;
+            SpeedMilestone = SpeedMilestone * SpeedMutliplier;
+            runSpeed = runSpeed * SpeedMutliplier;
+        }
         
         if(isDead ==false)
         {

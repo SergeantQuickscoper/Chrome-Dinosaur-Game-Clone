@@ -218,7 +218,9 @@ MonoBehaviour:
   charController2D: {fileID: 3646282483626288069}
   anim: {fileID: 6056176296007357069}
   HorizontalValue: 0
-  runSpeed: 30
+  runSpeed: 35
+  SpeedMutliplier: 1.1
+  SpeedMilestone: 50
 --- !u!1 &3646282484123304093
 GameObject:
   m_ObjectHideFlags: 0
