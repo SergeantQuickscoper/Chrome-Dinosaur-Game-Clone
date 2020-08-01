@@ -7,6 +7,7 @@ public class PlayerMovement : MonoBehaviour
 
     public CharacterController2D charController2D;
     public Animator anim;
+    private ScoreManager scoreManager;
     public float HorizontalValue = 0f;
     public float runSpeed = 20f;
     private bool isStarted = false;
@@ -25,6 +26,7 @@ public class PlayerMovement : MonoBehaviour
     {
         gameMasterInstance = GameObject.FindObjectOfType<GameMaster>();
         Player = GameObject.FindObjectOfType<PlayerMovement>();
+        scoreManager = GameObject.FindObjectOfType<ScoreManager>();
 
     }
     void Start()
@@ -76,10 +78,23 @@ public class PlayerMovement : MonoBehaviour
         if(isDead == true)
         {
             if(Input.GetKeyDown(KeyCode.Space))
-            {
+            {                
+                
                 gameMasterInstance.RespawnPlayer(isDead, Player);
             }
         }
+        
+        if(isDead == false && isStarted == true)
+        {
+            scoreManager.isScoreIncreasing = true;
+        }
+        else
+        {
+            
+            scoreManager.isScoreIncreasing = false;
+            
+        }
+
         
     }
 
@@ -113,6 +128,7 @@ public class PlayerMovement : MonoBehaviour
         {
             isDead = true;
             anim.SetBool("IsDead", isDead);
+            
         }
     }
 }
